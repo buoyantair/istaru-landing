@@ -29,25 +29,83 @@ html, body {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    width: 1000px;
+    width: 90%;
     height: 600px;
     background: #FFF;
     color: #535353;
     font-family: "Open Sans", sans-serif;
     margin: 0 auto;
     position: relative;
-    bottom: -10em;
+    bottom: -3em;
     box-shadow: 0px 10px 15px 1px rgba(0, 0, 0, 0.25);
     border-radius: 21px;
     overflow: hidden; }
     .jumbotron .slack-window .sidebar {
       background: #F2F4F7;
-      width: 250px;
-      height: 100%;
+      width: 22.5%;
+      height: 600px;
       padding-left: 2em; }
       .jumbotron .slack-window .sidebar .head h1 {
         font-family: "Open Sans", sans-serif;
         text-transform: uppercase;
         font-size: 20px; }
+      .jumbotron .slack-window .sidebar .body .person {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        margin-top: 1em; }
+        .jumbotron .slack-window .sidebar .body .person span {
+          width: 10px;
+          height: 10px;
+          background: linear-gradient(90deg, #E16363, #F24BAA);
+          border-radius: 5px;
+          margin: 0.5em 0; }
+        .jumbotron .slack-window .sidebar .body .person p {
+          min-width: 30px;
+          min-height: 20px;
+          margin: 0 0.5em; }
+      .jumbotron .slack-window .sidebar .body .person.active {
+        background: linear-gradient(90deg, #E16363, #F24BAA);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        color: #FFF;
+        position: relative;
+        right: 2em;
+        padding-left: 2em; }
+        .jumbotron .slack-window .sidebar .body .person.active span {
+          opacity: 0; }
+  .jumbotron .messages {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    min-width: 64.26%;
+    min-height: 600px; }
+    .jumbotron .messages .msghead {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      min-width: 45%;
+      min-height: 10px;
+      padding: 2em 0em 1em 2em;
+      border-bottom: 1px solid #A8A8A8; }
+    .jumbotron .messages .msg {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      min-width: 64.26%;
+      min-height: 60px;
+      margin-top: 1em;
+      background: red; }
+      .jumbotron .messages .msg .icon {
+        width: 60px;
+        height: 60px;
+        background: green;
+        margin-left: 3em;
+        margin-right: 1em; }
+      .jumbotron .messages .msg .body {
+        width: 49.5%;
+        height: 60px;
+        min-height: 60px;
+        background: yellow; }
 
 /*# sourceMappingURL=components.css.map */
