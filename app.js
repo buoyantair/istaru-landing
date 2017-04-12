@@ -10,5 +10,5 @@ app.get('/', function (req, res) {
 })
 
 app.listen(port, ()=>{
-  console.log("We're up and running senpai!")
+  console.log("We're up and running!")
 })
