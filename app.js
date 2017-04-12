@@ -7,6 +7,6 @@ app.get('/', function (req, res) {
   res.render('index', { pageTitle: 'I Star You - Home'})
 })
 
-app.listen(3000, ()=>{
+app.listen(process.env.port, ()=>{
   console.log("We're up and running senpai!")
 })
