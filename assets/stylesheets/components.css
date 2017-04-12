@@ -32,10 +32,22 @@ html, body {
     width: 1000px;
     height: 600px;
     background: #FFF;
+    color: #535353;
+    font-family: "Open Sans", sans-serif;
     margin: 0 auto;
     position: relative;
     bottom: -10em;
     box-shadow: 0px 10px 15px 1px rgba(0, 0, 0, 0.25);
-    border-radius: 21px; }
+    border-radius: 21px;
+    overflow: hidden; }
+    .jumbotron .slack-window .sidebar {
+      background: #F2F4F7;
+      width: 250px;
+      height: 100%;
+      padding-left: 2em; }
+      .jumbotron .slack-window .sidebar .head h1 {
+        font-family: "Open Sans", sans-serif;
+        text-transform: uppercase;
+        font-size: 20px; }
 
 /*# sourceMappingURL=components.css.map */
