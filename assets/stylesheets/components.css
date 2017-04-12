@@ -4,6 +4,16 @@
 /* ---------------------------------------------------- */
 /* INCLUDES */
 /* ---------------------------------------------------- */
+#logo {
+  background: url("../img/logo.png") no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#ryu {
+  background: linear-gradient(#8FD6FF, #2532EA);
+  background-size: cover;
+  background-position: center; }
+
 html, body {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
@@ -29,7 +39,7 @@ html, body {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    width: 90%;
+    width: 80%;
     height: 600px;
     background: #FFF;
     color: #535353;
@@ -42,7 +52,7 @@ html, body {
     overflow: hidden; }
     .jumbotron .slack-window .sidebar {
       background: #F2F4F7;
-      width: 22.5%;
+      width: 20%;
       height: 600px;
       padding-left: 2em; }
       .jumbotron .slack-window .sidebar .head h1 {
@@ -78,13 +88,13 @@ html, body {
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
-    min-width: 64.26%;
+    min-width: 66.2%;
     min-height: 600px; }
     .jumbotron .messages .msghead {
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-start;
-      min-width: 45%;
+      min-width: 40%;
       min-height: 10px;
       padding: 2em 0em 1em 2em;
       border-bottom: 1px solid #A8A8A8; }
@@ -92,20 +102,40 @@ html, body {
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-start;
-      min-width: 64.26%;
-      min-height: 60px;
-      margin-top: 1em;
-      background: red; }
+      min-width: 57.12%;
+      min-height: 70px;
+      margin-top: 2em; }
       .jumbotron .messages .msg .icon {
-        width: 60px;
-        height: 60px;
-        background: green;
+        width: 70px;
+        height: 70px;
         margin-left: 3em;
-        margin-right: 1em; }
+        margin-right: 1em;
+        border-radius: 100%; }
       .jumbotron .messages .msg .body {
-        width: 49.5%;
-        height: 60px;
-        min-height: 60px;
-        background: yellow; }
+        width: 44%;
+        height: 70px;
+        min-height: 70px; }
+        .jumbotron .messages .msg .body .sender {
+          font-weight: bold; }
+    .jumbotron .messages .msg-entry {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      min-width: 45.696%;
+      min-height: 9%;
+      position: relative;
+      bottom: -230px;
+      margin-left: 1em;
+      border-radius: 5px;
+      border: 1px solid #B3B3B3; }
+      .jumbotron .messages .msg-entry .plus {
+        width: 5%;
+        height: 9%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        margin-left: 1em;
+        color: #B3B3B3;
+        border-right: 1px solid #B3B3B3; }
 
 /*# sourceMappingURL=components.css.map */
