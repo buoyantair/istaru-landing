@@ -1,16 +1,19 @@
 {
-  "name": "bot-landing",
+  "name": "botwebsite",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "dependencies": {
-    "express": "^4.15.2",
-    "pug": "^2.0.0-beta11"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buoyantair/istaru-landing.git"
+  },
+  "author": "buoyantair",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buoyantair/istaru-landing/issues"
+  },
+  "homepage": "https://github.com/buoyantair/istaru-landing#readme"
 }
