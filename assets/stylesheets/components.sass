@@ -1,0 +1,26 @@
+@import 'extensions'
+html,body
+  font-family: 'Open Sans', sans-serif
+  font-size: 18px
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  +min-size(100%, 200vh)
+.jumbotron
+  +flex(column wrap, flex-end)
+  +min-size(100%, 100vh)
+  background: linear-gradient(90deg, #E16363, #F24BAA)
+  color: #FFF
+  h1
+    margin: 3em auto 0em auto
+    font-family: 'Pacifico', cursive
+    font-size: 50px
+  .slack-window
+    +flex(row wrap, flex-start)
+    +size(1000px, 600px)
+    background: #FFF
+    margin: 0 auto
+    position: relative
+    bottom: -10em
+    box-shadow: 0px 10px 15px 1px rgba(0,0,0,0.25)
+    border-radius: 21px
