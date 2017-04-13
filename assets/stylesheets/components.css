@@ -4,6 +4,11 @@
 /* ---------------------------------------------------- */
 /* INCLUDES */
 /* ---------------------------------------------------- */
+@keyframes top-bar-slide-in {
+  0% {
+    top: -100px; }
+  100% {
+    top: 0; } }
 #logo {
   background: url("../img/logo.png") no-repeat;
   background-size: cover;
@@ -32,11 +37,13 @@ html, body {
   z-index: 1000;
   position: absolute;
   top: 0;
-  color: #FFF; }
+  color: #FFF;
+  transition: all 0.1s; }
   .top-bar .logo {
     font-family: "Pacifico", cursive;
     font-size: 40px;
-    margin-left: 2em; }
+    margin-left: 2em;
+    color: inherit; }
   .top-bar .menu {
     display: flex;
     flex-flow: row wrap;
@@ -44,9 +51,10 @@ html, body {
     min-width: 500px;
     min-height: 80px;
     font-family: "Open Sans", sans-serif;
-    font-size: 18px; }
+    font-size: 18px;
+    margin-right: 1em; }
     .top-bar .menu .menu-item {
-      color: #FFF;
+      color: inherit;
       display: flex;
       flex-flow: column wrap;
       justify-content: center;
@@ -60,6 +68,16 @@ html, body {
       transition: all 0.25s; }
     .top-bar .menu .menu-item:hover {
       background: rgba(0, 0, 0, 0.1); }
+
+.top-bar.pinned {
+  position: fixed;
+  background: #FFF;
+  color: #E16363;
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.1);
+  animation: top-bar-slide-in 0.1s; }
+  .top-bar.pinned .menu .menu-item:hover {
+    background: #E16363;
+    color: #FFF; }
 
 .jumbotron {
   display: flex;
