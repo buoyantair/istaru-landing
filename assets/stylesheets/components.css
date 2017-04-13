@@ -25,8 +25,9 @@ html, body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
   min-width: 100%;
-  min-height: 200vh; }
+  min-height: 300vh; }
 
 .top-bar {
   display: flex;
@@ -79,6 +80,111 @@ html, body {
     background: #E16363;
     color: #FFF; }
 
+.slack-window {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  min-width: 10px;
+  min-height: 10px;
+  background: #FFF;
+  color: #535353;
+  font-family: "Open Sans", sans-serif;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0px 10px 15px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 21px;
+  overflow: hidden;
+  padding: 1em; }
+  .slack-window .sidebar {
+    background: #F2F4F7;
+    width: 20%;
+    height: 600px;
+    padding-left: 2em; }
+    .slack-window .sidebar .head h1 {
+      font-family: "Open Sans", sans-serif;
+      text-transform: uppercase;
+      font-size: 20px; }
+    .slack-window .sidebar .body .person {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      margin-top: 1em; }
+      .slack-window .sidebar .body .person span {
+        width: 10px;
+        height: 10px;
+        background: linear-gradient(90deg, #E16363, #F24BAA);
+        border-radius: 5px;
+        margin: 0.5em 0; }
+      .slack-window .sidebar .body .person p {
+        min-width: 30px;
+        min-height: 20px;
+        margin: 0 0.5em; }
+    .slack-window .sidebar .body .person.active {
+      background: linear-gradient(90deg, #E16363, #F24BAA);
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      color: #FFF;
+      position: relative;
+      right: 2em;
+      padding-left: 2em; }
+      .slack-window .sidebar .body .person.active span {
+        opacity: 0; }
+
+.messages {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  min-width: 66.2%;
+  min-height: 10px;
+  max-height: 600px; }
+  .messages .msghead {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    min-width: 40%;
+    min-height: 10px;
+    padding: 2em 0em 1em 2em;
+    border-bottom: 1px solid #A8A8A8; }
+  .messages .msg {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    min-width: 57.12%;
+    min-height: 70px;
+    margin-top: 2em; }
+    .messages .msg .icon {
+      width: 70px;
+      height: 70px;
+      margin-left: 3em;
+      margin-right: 1em;
+      border-radius: 100%; }
+    .messages .msg .body {
+      width: 44%;
+      height: 70px;
+      min-height: 70px; }
+      .messages .msg .body .sender {
+        font-weight: bold; }
+  .messages .msg-entry {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    min-width: 45.696%;
+    min-height: 9%;
+    position: relative;
+    bottom: -230px;
+    margin-left: 1em;
+    border-radius: 5px;
+    border: 1px solid #B3B3B3; }
+    .messages .msg-entry .plus {
+      width: 5%;
+      height: 9%;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      margin-left: 1em;
+      color: #B3B3B3;
+      border-right: 1px solid #B3B3B3; }
+
 .jumbotron {
   display: flex;
   flex-flow: column wrap;
@@ -92,106 +198,38 @@ html, body {
     font-family: "Pacifico", cursive;
     font-size: 50px; }
   .jumbotron .slack-window {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
     width: 80%;
     height: 600px;
-    background: #FFF;
-    color: #535353;
-    font-family: "Open Sans", sans-serif;
-    margin: 0 auto;
-    position: relative;
     bottom: -3em;
-    box-shadow: 0px 10px 15px 1px rgba(0, 0, 0, 0.25);
-    border-radius: 21px;
-    overflow: hidden; }
-    .jumbotron .slack-window .sidebar {
-      background: #F2F4F7;
-      width: 20%;
-      height: 600px;
-      padding-left: 2em; }
-      .jumbotron .slack-window .sidebar .head h1 {
-        font-family: "Open Sans", sans-serif;
-        text-transform: uppercase;
-        font-size: 20px; }
-      .jumbotron .slack-window .sidebar .body .person {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        margin-top: 1em; }
-        .jumbotron .slack-window .sidebar .body .person span {
-          width: 10px;
-          height: 10px;
-          background: linear-gradient(90deg, #E16363, #F24BAA);
-          border-radius: 5px;
-          margin: 0.5em 0; }
-        .jumbotron .slack-window .sidebar .body .person p {
-          min-width: 30px;
-          min-height: 20px;
-          margin: 0 0.5em; }
-      .jumbotron .slack-window .sidebar .body .person.active {
-        background: linear-gradient(90deg, #E16363, #F24BAA);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        color: #FFF;
-        position: relative;
-        right: 2em;
-        padding-left: 2em; }
-        .jumbotron .slack-window .sidebar .body .person.active span {
-          opacity: 0; }
-  .jumbotron .messages {
+    padding: 0; }
+
+section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  min-width: 100%;
+  min-height: 600px;
+  padding-top: 5em; }
+  section .content {
     display: flex;
     flex-flow: column wrap;
-    justify-content: flex-start;
-    min-width: 66.2%;
-    min-height: 600px; }
-    .jumbotron .messages .msghead {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-      min-width: 40%;
-      min-height: 10px;
-      padding: 2em 0em 1em 2em;
-      border-bottom: 1px solid #A8A8A8; }
-    .jumbotron .messages .msg {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-      min-width: 57.12%;
-      min-height: 70px;
-      margin-top: 2em; }
-      .jumbotron .messages .msg .icon {
-        width: 70px;
-        height: 70px;
-        margin-left: 3em;
-        margin-right: 1em;
-        border-radius: 100%; }
-      .jumbotron .messages .msg .body {
-        width: 44%;
-        height: 70px;
-        min-height: 70px; }
-        .jumbotron .messages .msg .body .sender {
-          font-weight: bold; }
-    .jumbotron .messages .msg-entry {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-      min-width: 45.696%;
-      min-height: 9%;
-      position: relative;
-      bottom: -230px;
-      margin-left: 1em;
-      border-radius: 5px;
-      border: 1px solid #B3B3B3; }
-      .jumbotron .messages .msg-entry .plus {
-        width: 5%;
-        height: 9%;
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        margin-left: 1em;
-        color: #B3B3B3;
-        border-right: 1px solid #B3B3B3; }
+    justify-content: center;
+    width: 45%;
+    height: 400px;
+    margin: auto;
+    margin-left: 3em;
+    position: relative;
+    right: 100%;
+    transition: all 1s; }
+  section .imagery {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-width: 50%;
+    min-height: 400px;
+    margin: auto;
+    position: relative;
+    left: 100%;
+    transition: all 1s; }
 
 /*# sourceMappingURL=components.css.map */

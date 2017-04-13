@@ -19,12 +19,13 @@ html,body
   padding: 0
   margin: 0
   box-sizing: border-box
-  +min-size(100%, 200vh)
+  overflow: hidden
+  +min-size(100%, 300vh)
 
 
 //
 //
-//      top-bar
+//      .top-bar
 //
 //
 .top-bar
@@ -58,6 +59,11 @@ html,body
       transition: all .25s
     .menu-item:hover
       background: rgba(0,0,0,0.1)
+//
+//
+//      .top-bar .pinned
+//
+//
 .top-bar.pinned
   position: fixed
   background: #FFF
@@ -68,6 +74,93 @@ html,body
     .menu-item:hover
       background: #E16363
       color: #FFF
+//
+//
+//      .slack-window
+//
+//
+.slack-window
+  +flex(row wrap, flex-start)
+  +min-size(10px, 10px)
+  background: #FFF
+  color: #535353
+  font-family: 'Open Sans', sans-serif
+  margin: 0 auto
+  position: relative
+  box-shadow: 0px 10px 15px 1px rgba(0,0,0,0.25)
+  border-radius: 21px
+  overflow: hidden
+  padding: 1em
+  .sidebar
+    background: #F2F4F7
+    +size($sw-w/4, $sw-h)
+    padding-left: 2em
+    .head h1
+      font-family: 'Open Sans', sans-serif
+      text-transform: uppercase
+      font-size: 20px
+    .body
+      .person
+        +flex(row wrap, flex-start)
+        margin-top: 1em
+        span
+          +size(10px, 10px)
+          background: linear-gradient(90deg, #E16363, #F24BAA)
+          border-radius: 5px
+          margin: 0.5em 0
+        p
+          +min-size(30px, 20px)
+          margin: 0 .5em
+      .person.active
+        background: linear-gradient(90deg, #E16363, #F24BAA)
+        border-top-right-radius: 5px
+        border-bottom-right-radius: 5px
+        color: #FFF
+        position: relative
+        right: 2em
+        padding-left: 2em
+        span
+          opacity: 0
+.messages
+  +flex(column wrap, flex-start)
+  +min-size(($sw-w/4) * 3.31, 10px)
+  max-height: $sw-h
+  .msghead
+    +flex(row wrap, flex-start)
+    +min-size($sw-w/2 , 10px)
+    padding: 2em 0em 1em 2em
+    border-bottom: 1px solid #A8A8A8
+  .msg
+    +flex(row wrap, flex-start)
+    +min-size(($sw-w/4) * 2.856, $icon-size)
+    margin-top: 2em
+    .icon
+      +size($icon-size, $icon-size)
+      margin-left: 3em
+      margin-right: 1em
+      border-radius: 100%
+    .body
+      +size(($sw-w/4) * 2.2, $icon-size)
+      min-height: $icon-size
+      .sender
+        font-weight: bold
+  .msg-entry
+    +flex(row wrap, flex-start)
+    +min-size(($sw-w/5) * 2.856, 9%)
+    position: relative
+    bottom: -230px
+    margin-left: 1em
+    border-radius: 5px
+    border: 1px solid #B3B3B3
+    .plus
+      +size(5%, 9%)
+      +flex(column wrap, center)
+      margin-left: 1em
+      color: #B3B3B3
+      border-right: 1px solid #B3B3B3
+
+
+
 //
 //
 //      jumbotron
@@ -83,80 +176,30 @@ html,body
     font-family: 'Pacifico', cursive
     font-size: 50px
   .slack-window
-    +flex(row wrap, flex-start)
     +size($sw-w, $sw-h)
-    background: #FFF
-    color: #535353
-    font-family: 'Open Sans', sans-serif
-    margin: 0 auto
-    position: relative
     bottom: -3em
-    box-shadow: 0px 10px 15px 1px rgba(0,0,0,0.25)
-    border-radius: 21px
-    overflow: hidden
-    .sidebar
-      background: #F2F4F7
-      +size($sw-w/4, $sw-h)
-      padding-left: 2em
-      .head h1
-        font-family: 'Open Sans', sans-serif
-        text-transform: uppercase
-        font-size: 20px
-      .body
-        .person
-          +flex(row wrap, flex-start)
-          margin-top: 1em
-          span
-            +size(10px, 10px)
-            background: linear-gradient(90deg, #E16363, #F24BAA)
-            border-radius: 5px
-            margin: 0.5em 0
-          p
-            +min-size(30px, 20px)
-            margin: 0 .5em
-        .person.active
-          background: linear-gradient(90deg, #E16363, #F24BAA)
-          border-top-right-radius: 5px
-          border-bottom-right-radius: 5px
-          color: #FFF
-          position: relative
-          right: 2em
-          padding-left: 2em
-          span
-            opacity: 0
-  .messages
-    +flex(column wrap, flex-start)
-    +min-size(($sw-w/4) * 3.31, $sw-h)
-    .msghead
-      +flex(row wrap, flex-start)
-      +min-size($sw-w/2 , 10px)
-      padding: 2em 0em 1em 2em
-      border-bottom: 1px solid #A8A8A8
-    .msg
-      +flex(row wrap, flex-start)
-      +min-size(($sw-w/4) * 2.856, $icon-size)
-      margin-top: 2em
-      .icon
-        +size($icon-size, $icon-size)
-        margin-left: 3em
-        margin-right: 1em
-        border-radius: 100%
-      .body
-        +size(($sw-w/4) * 2.2, $icon-size)
-        min-height: $icon-size
-        .sender
-          font-weight: bold
-    .msg-entry
-      +flex(row wrap, flex-start)
-      +min-size(($sw-w/5) * 2.856, 9%)
-      position: relative
-      bottom: -230px
-      margin-left: 1em
-      border-radius: 5px
-      border: 1px solid #B3B3B3
-      .plus
-        +size(5%, 9%)
-        +flex(column wrap, center)
-        margin-left: 1em
-        color: #B3B3B3
-        border-right: 1px solid #B3B3B3
+    padding: 0
+//
+//
+//      section
+//
+//
+section
+  +flex(row wrap, space-between)
+  +min-size(100%, 600px)
+  padding-top: 5em
+  .content
+    +flex(column wrap, center)
+    +size(45%, 400px)
+    margin: auto
+    margin-left: 3em
+    position: relative
+    right: 100%
+    transition: all 1s
+  .imagery
+    +flex(column wrap, center)
+    +min-size(50%, 400px)
+    margin: auto
+    position: relative
+    left: 100%
+    transition: all 1s
