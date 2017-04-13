@@ -23,6 +23,44 @@ html, body {
   min-width: 100%;
   min-height: 200vh; }
 
+.top-bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  min-width: 100%;
+  min-height: 80px;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  color: #FFF; }
+  .top-bar .logo {
+    font-family: "Pacifico", cursive;
+    font-size: 40px;
+    margin-left: 2em; }
+  .top-bar .menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    min-width: 500px;
+    min-height: 80px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px; }
+    .top-bar .menu .menu-item {
+      color: #FFF;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      min-width: 100px;
+      min-height: 80px;
+      text-align: center;
+      margin: 0 0.25em;
+      padding-left: 1em;
+      padding-right: 1em;
+      text-decoration: none;
+      transition: all 0.25s; }
+    .top-bar .menu .menu-item:hover {
+      background: rgba(0, 0, 0, 0.1); }
+
 .jumbotron {
   display: flex;
   flex-flow: column wrap;

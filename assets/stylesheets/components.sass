@@ -2,7 +2,7 @@
 $sw-w: 80%
 $sw-h: 600px
 $icon-size: 70px
-
+$topbar-height : 80px
 #logo
   background: url('../img/logo.png') no-repeat
   background-size: cover
@@ -19,6 +19,46 @@ html,body
   margin: 0
   box-sizing: border-box
   +min-size(100%, 200vh)
+
+
+//
+//
+//      top-bar
+//
+//
+.top-bar
+  +flex(row wrap, space-between)
+  +min-size(100%, $topbar-height)
+  z-index: 1000
+  position: absolute
+  top: 0
+  color: #FFF
+  .logo
+    font-family: 'Pacifico', cursive
+    font-size: 40px
+    margin-left: 2em
+  .menu
+    +flex(row wrap, flex-start)
+    +min-size(500px, $topbar-height)
+    font-family: 'Open Sans', sans-serif
+    font-size: 18px
+    .menu-item
+      color: #FFF
+      +flex(column wrap, center)
+      +min-size(100px, $topbar-height)
+      text-align: center
+      margin: 0 .25em
+      padding-left: 1em
+      padding-right: 1em
+      text-decoration: none
+      transition: all .25s
+    .menu-item:hover
+      background: rgba(0,0,0,0.1)
+//
+//
+//      jumbotron
+//
+//
 .jumbotron
   +flex(column wrap, flex-end)
   +min-size(100%, 100vh)
